@@ -5,7 +5,7 @@ todos = filehandler.get_todos("files/todos.txt")
 
 
 def add_todo():
-    new_todo = st.session_state["new_todo"]
+    new_todo = st.session_state["new_todo"] + "\n"
     todos.append(new_todo)
     filehandler.write_todos("files/todos.txt", todos)
 
@@ -14,7 +14,7 @@ st.title("My Todo App")
 st.subheader("This is my todo app.")
 st.write("This application increases the productivity")
 
-# To run the app - streamlit run webgui.py
+# To run the app - streamlit run Home.py
 for index, todo in enumerate(todos):
     checkbox = st.checkbox(todo, key=todo)
     if checkbox:
